@@ -1,1 +1,15 @@
-/* CSS declarations go here */
+.App {
+
+}
+
+#imagen {
+    background-color: red;
+    height: 100%;
+    width: 50%;
+}
+
+#inicio {
+    background-color: gray;
+    height: 100%;
+    width: 50%;
+}
