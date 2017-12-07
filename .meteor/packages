@@ -23,3 +23,5 @@ accounts-ui
 accounts-password
 accounts-google
 google-config-ui
+accounts-facebook
+facebook-config-ui

@@ -16,17 +16,27 @@ class App extends Component {
     agregarUsuario() {
         Meteor.call('tasks.insert', Meteor.user().profile.name, Meteor.user()._id, [usuario.ayudas], usuario.puntos);
     }
+    loginWithFacebook() {
+        Meteor.loginWithFacebook({ requestPermissions: ['public_profile', 'email'], loginStyle: 'redirect' }, (err) => {
 
-
+            this.zone.run(() => {
+                if (err) {
+                    this.error = err;
+                } else {
+                    console.log('done');
+                }
+            });
+        });
+    }
     render() {
+        console.log(Meteor.user());
         if(Meteor.user()!== undefined && Meteor.user()!==null) {
             console.log(Meteor.userId());
             return (
                 <div>
                     <AccountsUIWrapper/>
                     <h2>PERFIL</h2>
-                    <Pedir></Pedir>
-                    <Dar></Dar>
+                    
                 </div>
             )
         }
@@ -43,6 +53,10 @@ class App extends Component {
             )
         }
     }
+}
+
+if(Meteor.user()){
+    Meteor.subscribe('myuser');
 }
 
 App.propTypes = {
