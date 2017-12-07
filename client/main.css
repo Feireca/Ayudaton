@@ -1,15 +1,13 @@
-.App {
-
-}
-
 #imagen {
     background-color: red;
     height: 100%;
     width: 50%;
+    float: left;
 }
 
 #inicio {
     background-color: gray;
     height: 100%;
     width: 50%;
+    float: left;
 }
